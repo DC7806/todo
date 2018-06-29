@@ -1,0 +1,11 @@
+zh-TW:
+  activerecord:
+    models:
+      task: 任務
+    attributes:
+      task:
+        title: 標題
+        description: 內容
+    errors:
+      messages:
+        blank: 為必填項目

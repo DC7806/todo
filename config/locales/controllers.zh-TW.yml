@@ -1,0 +1,19 @@
+zh-TW:
+  crud:
+    index: 列表 - %{resource}
+    new: 新增%{resource}
+    edit: 編輯%{resource}
+    destroy: 刪除%{resource}
+    create_success: 成功新增%{resource} 
+    create_fail: 新增失敗
+    update_success: 成功更新%{resource}
+    update_fail: 更新失敗
+    destroy_success: 成功刪除%{resource}
+  buttons:
+    new: 新增
+    edit: 編輯
+    destroy: 刪除
+    submit: 確認送出
+    cancel: 取消
+  message:
+    confirm: 確定？

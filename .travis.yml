@@ -1,0 +1,13 @@
+addons:
+  postgresql: 9.6
+before_script:
+  - psql -c 'create database todo_test;' -U postgres
+dist: centos/7
+language: ruby
+rvm:
+  - 2.4.1
+script:
+  - bundle exec rails db:migrate RAILS_ENV=test
+  - bundle exec rspec
+services:
+  - redis-server
