@@ -1,0 +1,27 @@
+<h1>任務列表</h1>
+<%= link_to '新增', new_task_path, class: "btn btn-default mt-xs-20" %>
+<table class="table xs-transform mt-xs-20">
+  <thead class="hidden-xs">
+    <tr>
+      <td class="col-sm-5">名稱</td>
+      <td class="col-sm-5">內容</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+    <tr>
+      <td class="col-sm-5"><%= task.title %></td>
+      <td class="col-sm-5"><%= task.description %></td>
+      <td class="col-sm-2 text-center">
+        <%= link_to edit_task_path(task), class: "btn btn-default" do %>
+          <i class="fa fa-pencil fa-fw"></i>
+        <% end %> 
+        <%= link_to task_path(task), method: "delete",
+            data: { confirm: "確認刪除?" }, class: "btn btn-default ml-xs-5" do %>
+          <i class="fa fa-trash fa-fw"></i>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
