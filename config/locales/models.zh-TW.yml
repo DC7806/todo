@@ -1,0 +1,8 @@
+zh-TW:
+  activerecord:
+      models:
+        task: 任務
+      attributes:
+        task:
+          title: 標題
+          description: 內容

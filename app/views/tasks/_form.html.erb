@@ -1,6 +1,6 @@
 <%= simple_form_for task do |f| %>
-  <%= f.input :title, label: '名稱' %>
-  <%= f.input :description, label: '內容' %>
-  <%= f.submit "確認送出", class: "btn btn-primary form-control mt-xs-20" %>
-  <%= link_to "取消", tasks_path, class: "btn btn-default form-control mt-xs-20" %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.submit t('buttons.submit'), class: "btn btn-primary form-control mt-xs-20" %>
+  <%= link_to t('buttons.cancel'), tasks_path, class: "btn btn-default form-control mt-xs-20" %>
 <% end %>

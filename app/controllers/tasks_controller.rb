@@ -13,10 +13,10 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
-      redirect_to tasks_path, notice: '新增成功'
+      redirect_to tasks_path, notice: t('crud.create_success', resource: Task.model_name.human)
     else
       render :new
-      flash[:alert] = '新增失敗'
+      flash[:alert] = t('crud.create_fail')
     end
   end
 
@@ -25,16 +25,16 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to tasks_path, notice: '更新成功'
+      redirect_to tasks_path, notice: t('crud.update_success', resource: Task.model_name.human)
     else
       render :edit
-      flash[:alert] = '更新失敗'
+      flash[:alert] = t('crud.update_fail')
     end
   end 
 
   def destroy
     @task.destroy
-    redirect_to tasks_path, notice: '刪除成功'
+    redirect_to tasks_path, notice: t('crud.destroy_success', resource: Task.model_name.human)
   end
 
   private
