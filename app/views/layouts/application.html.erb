@@ -10,6 +10,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container my-xs-40">
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+      <%= yield %>
+    </div>
   </body>
 </html>
