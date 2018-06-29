@@ -52,6 +52,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'awesome_print', git: 'https://github.com/awesome-print/awesome_print.git', branch: 'master'
+  gem "capistrano", "~> 3.11", require: false
 end
 
 group :test do
