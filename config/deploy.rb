@@ -21,7 +21,7 @@ set :deploy_to, "/home/deploy/todo"
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "config/database.yml", "config/credentials.yml.enc"
+append :linked_files, "config/database.yml", "config/master.key"
 
 # Default value for linked_dirs is []
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/attachments", "public/images", "public/uploads", "vendor/bundle"
@@ -38,7 +38,7 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/atta
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 namespace :deploy do
-  
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do

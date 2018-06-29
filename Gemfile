@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.1'
+# ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
@@ -53,6 +53,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'awesome_print', git: 'https://github.com/awesome-print/awesome_print.git', branch: 'master'
   gem "capistrano", "~> 3.11", require: false
+  gem 'capistrano-rails', '~> 1.3', '>= 1.3.1'
 end
 
 group :test do
