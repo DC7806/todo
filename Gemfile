@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# ruby '2.4.1'
+ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg', '1.0.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -42,6 +42,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails', '~> 3.7'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'capistrano', '~> 3.10', '>= 3.10.1'
+  gem 'capistrano-rails', '~> 1.3', '>= 1.3.1'
+  gem 'capistrano-rbenv', git: 'https://github.com/capistrano/rbenv.git', branch: 'master'
 end
 
 group :development do
@@ -52,7 +55,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'awesome_print', git: 'https://github.com/awesome-print/awesome_print.git', branch: 'master'
-  gem "capistrano", "~> 3.11", require: false
 end
 
 group :test do

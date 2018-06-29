@@ -21,13 +21,15 @@ set :deploy_to, "/home/deploy/todo"
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "config/database.yml", "config/credentials.yml.enc"
+append :linked_files, "config/database.yml", "config/master.key"
 
 # Default value for linked_dirs is []
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/attachments", "public/images", "public/uploads", "vendor/bundle"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
+
+# set :rbenv_path, '/home/deploy/.rbenv'
 
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
