@@ -24,4 +24,14 @@ RSpec.describe Task, type: :model do
 
   end
 
+  describe '步驟14' do
+
+    it '資料驗證 - 結束時間必填' do
+      task = Task.create(title: 'xx', description: 'xx', end_at: '')
+      expect(task).to_not be_valid
+      expect(task.errors.messages[:description].first).to_not be nil?
+    end
+
+  end
+
 end

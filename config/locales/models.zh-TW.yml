@@ -6,6 +6,7 @@ zh-TW:
       task:
         title: 標題
         description: 內容
+        end_at: 結束時間
     errors:
       messages:
         blank: 為必填項目
