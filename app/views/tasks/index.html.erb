@@ -1,5 +1,9 @@
 <h1><%= t('crud.index', resource: Task.model_name.human) %></h1>
 <%= link_to t('buttons.new'), new_task_path, class: "btn btn-default mt-xs-20" %>
+
+<%= render 'sort_tasks', q: @q %>
+<%= link_to t('buttons.show_all'), tasks_path, class: 'mb-xs-20 form-control btn btn-default' %>
+
 <table class="table xs-transform mt-xs-20">
   <thead class="hidden-xs">
     <tr>
@@ -12,7 +16,6 @@
   <tbody>
     <% @tasks.each do |task| %>
     <tr>
-      <!-- <td class="col-sm-1"><%#= t("activerecord.attributes.task/statuses.#{task.status}") %></td> -->
       <%= content_tag :td, class: 'col-sm-1' do %>
         <%= content_tag :span, t("activerecord.attributes.task/statuses.#{task.status}"), class: "label #{status_label_class(task.status)}" %>
       <% end %>

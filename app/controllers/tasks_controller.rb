@@ -3,8 +3,10 @@ class TasksController < ApplicationController
   before_action :find_task, only: [:edit, :update, :destroy]
   
   def index
+    @q = Task.ransack(params[:q])
+    @tasks = @q.result(distinct: true).order(end_at: :asc)
     # @tasks = Task.order(created_at: :desc)
-    @tasks = Task.order(end_at: :asc)
+    # @tasks = Task.order(end_at: :asc)
   end
 
   def new

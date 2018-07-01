@@ -1,0 +1,5 @@
+<%= search_form_for @q, class: 'mt-xs-20' do |f| %>
+  <%= f.search_field :title_cont, class: 'form-control mb-xs-10', placeholder: t('status_sort.by_title') %>
+  <%= f.select :status_eq, ransack_status_collection, {include_blank: t('status_sort.by_status')} ,{class: 'form-control mb-xs-10'} %>
+  <%= f.submit t('buttons.search'), class: 'btn btn-default form-control mb-xs-10' %>
+<% end %>
