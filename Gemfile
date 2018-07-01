@@ -37,6 +37,9 @@ gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'datetime_picker_input'
 
+# sort
+gem 'ransack'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

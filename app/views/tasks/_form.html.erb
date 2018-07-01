@@ -10,6 +10,7 @@
       date_min_date: Time.current.strftime('%Y-%m-%d')
     }
   } %>
+  <%= f.input :status, collection: status_collection, include_blank: false  %>
   <%= f.submit t('buttons.submit'), class: "btn btn-primary form-control mt-xs-20" %>
   <%= link_to t('buttons.cancel'), tasks_path, class: "btn btn-default form-control mt-xs-20" %>
 <% end %>

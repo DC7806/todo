@@ -2,4 +2,6 @@ class Task < ApplicationRecord
 
   validates :title, :description, :end_at, presence: true
 
+  enum status: [:pending, :ongoing, :finished] 
+
 end
