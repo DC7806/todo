@@ -7,6 +7,11 @@ zh-TW:
         title: 標題
         description: 內容
         end_at: 結束時間
+        status: 狀態
+      task/statuses:
+        pending: 待處理 
+        ongoing: 進行中
+        finished: 已完成
     errors:
       messages:
         blank: 為必填項目

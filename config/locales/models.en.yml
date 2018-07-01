@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    models:
+      task: task
+    attributes:
+      task:
+        title: title
+        description: description
+        end_at: end at
+        task: task
+      task/statuses:
+        pending: pending 
+        ongoing: ongoing
+        finished: finished
+    errors:
+      messages:
+        blank: can't be blank
