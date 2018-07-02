@@ -1,0 +1,8 @@
+zh-TW:
+  views:
+     pagination:
+       first: "|<"
+       last: ">|"
+       previous: "<"
+       next: ">"
+       truncate: "..."
