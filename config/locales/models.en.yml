@@ -8,10 +8,15 @@ en:
         description: description
         end_at: end at
         task: task
+        priority: priority
       task/statuses:
         pending: pending 
         ongoing: ongoing
         finished: finished
+      task/priorities:
+        low: low
+        medium: medium
+        high: high
     errors:
       messages:
         blank: can't be blank

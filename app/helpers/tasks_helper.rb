@@ -1,7 +1,7 @@
 module TasksHelper
 
-  def status_collection
-    Task.statuses.keys.map {|key| [I18n.t("activerecord.attributes.task/statuses.#{key}"), key]}
+  def task_form_collection(attrs)
+    Task.send(attrs).keys.map {|key| [I18n.t("activerecord.attributes.task/#{attrs}.#{key}"), key]}
   end
 
   def ransack_status_collection

@@ -7,8 +7,10 @@
 <table class="table xs-transform mt-xs-20">
   <thead class="hidden-xs">
     <tr>
+      <td><%= sort_link(@q, :priority, t('activerecord.attributes.task.priority'), default_order: :asc) %></td>
+      
       <%= content_tag :td, t('activerecord.attributes.task.status', class: 'col-sm-1') %>
-      <%= content_tag :td, t('activerecord.attributes.task.end_at', class: 'col-sm-2') %>
+      <%= content_tag :td, t('activerecord.attributes.task.end_at', class: 'col-sm-1') %>
       <%= content_tag :td, t('activerecord.attributes.task.title', class: 'col-sm-3') %>
       <%= content_tag :td, t('activerecord.attributes.task.description', class: 'col-sm-4') %>
     </tr>
@@ -16,10 +18,11 @@
   <tbody>
     <% @tasks.each do |task| %>
     <tr>
+      <td class="col-sm-1"><%= t("activerecord.attributes.task/priorities.#{task.priority}") %></td>
       <%= content_tag :td, class: 'col-sm-1' do %>
         <%= content_tag :span, t("activerecord.attributes.task/statuses.#{task.status}"), class: "label #{status_label_class(task.status)}" %>
       <% end %>
-      <td class="col-sm-2"><%= task.end_at.strftime('%Y-%m-%d %H:%M') %></td>
+      <td class="col-sm-1"><%= task.end_at.strftime('%Y-%m-%d %H:%M') %></td>
       <td class="col-sm-3"><%= task.title %></td>
       <td class="col-sm-4"><%= task.description %></td>
       <td class="col-sm-2 text-center">
