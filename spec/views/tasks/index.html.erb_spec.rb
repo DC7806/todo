@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'tasks/index.html.erb' do
 
   before do
-    @first_task = Task.create(title: 'first_title', description: 'first_desc', end_at: Time.now, status: 0)
-    @new_task = Task.create(title: 'new_title', description: 'new_desc', end_at: Time.now + 1.day, status: 1)
+    @first_task = Task.create(title: 'first_title', description: 'first_desc', end_at: Time.now, status: 0, priority: 0)
+    @new_task = Task.create(title: 'new_title', description: 'new_desc', end_at: Time.now + 1.day, status: 1, priority: 1)
   end
 
   # 兩排序規則需要同時存在？
@@ -47,6 +47,17 @@ RSpec.describe 'tasks/index.html.erb' do
       click_button(I18n.t('buttons.search'))
       expect(page).to have_content(@first_task.title)
       expect(page).to have_no_content(@new_task.title)
+    end
+  end
+
+  describe '步驟16' do
+    it '能夠以優先順序做排序' do
+      task_order = Task.all
+      visit '/tasks'
+      click_link(I18n.t('activerecord.attributes.task.priority'))
+      expect(page.body.index(@first_task.title)).to be < page.body.index(@new_task.title)
+      click_link(I18n.t('activerecord.attributes.task.priority'))
+      expect(page.body.index(@first_task.title)).to be > page.body.index(@new_task.title)
     end
   end
 

@@ -8,10 +8,15 @@ zh-TW:
         description: 內容
         end_at: 結束時間
         status: 狀態
+        priority: 優先順序
       task/statuses:
         pending: 待處理 
         ongoing: 進行中
         finished: 已完成
+      task/priorities:
+        low: 低
+        medium: 中
+        high: 高
     errors:
       messages:
         blank: 為必填項目
